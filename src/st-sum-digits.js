@@ -16,12 +16,22 @@ export default function getSumOfDigits(n) {
 
   let figures = '' + n;
   let sum = 0;
+  let newSum = 0;
   
+  // function getSum()
   for (let i=0; i < figures.length; i++){
   sum+=+figures[i];
   }
    let result = sum.toString().replace('0','');
   
-  return parseInt(result);
+   if (result.length<=3){
+    for (let i=0; i < result.length; i++){
+      newSum+=+result[i];
+      }
+      result = newSum.toString();
+
+   }
+   
+   return parseInt(result);
     
     }
